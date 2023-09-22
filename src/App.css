@@ -1,38 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(233, 230, 232, 0.9); /* Replace with your desired background color */
+  min-height: 100vh; /* Ensure that the body takes up the full viewport height */
+}
+body.dark{
+  background-color: rgba(40, 40, 40, 0.9);
+}
+
+
+
+
 .App {
-  text-align: center;
+    /* background-color: rgba(233, 230, 232, 0.9); */
+    margin: 10px;
+    /* height: "100 %"; */
+}
+.App.dark {
+    background-color: rgba(40, 40, 40, 0.9);
+}
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  min-height: 100%;
 }

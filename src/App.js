@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "semantic-ui-css/semantic.min.css";
+import "./App.css";
+
+import { Outlet } from "react-router-dom";
+import { Navbar } from "./pages/Navbar";
+import { useAppContext } from "./context/appContext";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const {showDark, showDarkClass,dispatch} = useAppContext()
+  const handleDarkMode = ()=> {
+      
+    if(!showDark){
+      dispatch({ type: "SHOW_DARK_MODE" }); 
+    
+     
+    }else{
+      dispatch({type:"HIDE_DARK_MODE"})
+    }
+
+
+  }
+    return (
+            <body className={`${showDarkClass}`}>
+                <div className={`App ${showDarkClass}`}>
+                    <Navbar
+                        handleDarkMode={handleDarkMode}
+                        showDark={showDark}
+                        showDarkClass={showDarkClass}
+                    />
+                    <ToastContainer autoClose={2500} />
+                    <Outlet />
+                </div>
+            </body>
+    );
 }
 
 export default App;
