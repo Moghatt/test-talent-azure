@@ -14,7 +14,6 @@ function App() {
     if(!showDark){
       dispatch({ type: "SHOW_DARK_MODE" }); 
     
-     
     }else{
       dispatch({type:"HIDE_DARK_MODE"})
     }
